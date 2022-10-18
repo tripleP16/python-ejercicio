@@ -40,7 +40,7 @@ def get_products(
                 title_element = product.find_element(By.CLASS_NAME, "title")
                 name = title_element.get_attribute("innerHTML")
                 id = title_element.get_attribute("href").split("/")[-1]
-                product_to_send = Product(id,name,stars)
+                product_to_send = Product(id,name,total_stars)
                 products.append(product_to_send)
         next_button(i, driver)
     return products
